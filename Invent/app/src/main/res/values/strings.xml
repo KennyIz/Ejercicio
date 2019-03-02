@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Invent</string>
+    <string name="et_name">Nombre</string>
+    <string name="et_Description">Descripcion</string>
+    <string name="et_Quiantity">Cantidad</string>
+    <string name="item_add">Agregar</string>
 </resources>

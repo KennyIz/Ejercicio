@@ -65,4 +65,7 @@ public class AdapterProduct  extends RecyclerView.Adapter<AdapterProduct.Product
             tvQuantity = itemView.findViewById(R.id.tvQuantity);
         }
     }
+
+
+
 }
