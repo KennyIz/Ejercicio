@@ -3,6 +3,7 @@ package pe.edu.cibertec.invent;
 import android.content.ClipData;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -19,12 +20,30 @@ public class AdapterProduct  extends RecyclerView.Adapter<AdapterProduct.Product
     //CREA LA VISTA EN BASE AL PROTOTIPO
     @NonNull
     @Override
-    public ProductPrototype onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+    public ProductPrototype onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
+
+
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.prototype_product,viewGroup,false);
+
+
+
+        ProductPrototype productPrototype = new ProductPrototype(view);
+        return productPrototype;
+
     }
+
+
 // CARGA LA INFORMACION POR CADA CELDA DE ACUERDO  A LA POSICION
     @Override
-    public void onBindViewHolder(@NonNull ProductPrototype productPrototype, int i) {
+    public void onBindViewHolder(@NonNull ProductPrototype productPrototype, int position) {
+
+
+
+        productPrototype.tvName.setText(items.get(position).getName());
+        productPrototype.tvDescription.setText(items.get(position).getDescription());
+        productPrototype.tvQuantity.setText(String.valueOf(items.get(position).getQuantity()));
+
+
 
     }
 //INDICA LA CANTIADAD DE REGISTROS EN EL RECYCLERVIEW
